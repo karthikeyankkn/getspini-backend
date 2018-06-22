@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city: MyString
+  category: MyString
+  direct_lead_name: MyString
+  direct_lead_number: MyString
+  referal_lead_name: MyString
+  referal_lead_number: MyString
+
+two:
+  city: MyString
+  category: MyString
+  direct_lead_name: MyString
+  direct_lead_number: MyString
+  referal_lead_name: MyString
+  referal_lead_number: MyString
