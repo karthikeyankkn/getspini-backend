@@ -3,7 +3,7 @@ lock "~> 3.10.2"
 
 et :application, "getspini-backend"
 set :repo_url, "git@github.com:karthikrajk1992/hparks_new.git"
-# set :deploy_to, '/home/ubuntu/hparks'
+set :deploy_to, '/home/ubuntu/var/backend'
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 set :rvm_ruby_version, '2.4.1'
