@@ -60,12 +60,24 @@
 #     # password: "please use keys"
 #   }
 ##################www.getspini.com######################
-role :app, %w{ubuntu@54.169.244.126}
-role :web, %w{ubuntu@54.169.244.126}
-role :db,  %w{ubuntu@54.169.244.126}
+# role :app, %w{ubuntu@54.169.244.126}
+# role :web, %w{ubuntu@54.169.244.126}
+# role :db,  %w{ubuntu@54.169.244.126}
+# set :ssh_options, {
+#   keys: %w(~/.ssh/kp_1.pem),
+#   forward_agent: false,
+#   auth_methods: %w(publickey password)
+# }
+##################www.getspini.com######################
+
+
+####################www.staging.getspini.co############
+role :app, %w{ubuntu@13.250.92.156}
+role :web, %w{ubuntu@13.250.92.156}
+role :db,  %w{ubuntu@13.250.92.156}
 set :ssh_options, {
   keys: %w(~/.ssh/kp_1.pem),
   forward_agent: false,
   auth_methods: %w(publickey password)
 }
-##################www.getspini.com######################
+##################www.staging.getspini.co######################
