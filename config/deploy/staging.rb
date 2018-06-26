@@ -59,3 +59,11 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+role :app, %w{ubuntu@13.250.92.156}
+role :web, %w{ubuntu@13.250.92.156}
+role :db,  %w{ubuntu@13.250.92.156}
+set :ssh_options, {
+  keys: %w(~/.ssh/kp_1.pem),
+  forward_agent: false,
+  auth_methods: %w(publickey password)
+}
