@@ -18,16 +18,16 @@ class LeadsController <  ApplicationController
 	      		}
 	      		# mobile = "8056756218"
 	      		# message = "hi am from another code"
-	      		 # Sms.new(mobile, message).send
+	      		 Sms.new(data).send
 	      		 # puts response
-	      		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
-				{ 
-				:headers => { 
-					'Content-Type' => 'application/json', 
-					'X-SPIN-API-ACCESS-TOKEN' => 'HJKhlkasehl%jakbdajd81836sagsagHGSC*&t3@!UI'},	
-    			:body => @data.to_json
-  				});
-  				render json: @response.code, status: :created
+	   #    		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
+				# { 
+				# :headers => { 
+				# 	'Content-Type' => 'application/json', 
+				# 	'X-SPIN-API-ACCESS-TOKEN' => 'HJKhlkasehl%jakbdajd81836sagsagHGSC*&t3@!UI'},	
+    # 			:body => @data.to_json
+  		# 		});
+  		# 		render json: @response.code, status: :created
   		# 		if @response.code == '200'
   		# 			render json: @response, status: :created
   		# 		else
