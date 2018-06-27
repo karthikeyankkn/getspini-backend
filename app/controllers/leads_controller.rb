@@ -15,7 +15,7 @@ class LeadsController <  ApplicationController
 	      			# categoryName:@lead[:category],
 	      			budgetAmount: @lead[:budget_amount]
 	      		}
-	      		@response = HTTParty.post('https://sapi.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
+	      		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
 				{ 
 				:headers => { 'Content-Type' => 'application/json', 'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@'},	
     			:body => @data.to_json
@@ -33,7 +33,7 @@ class LeadsController <  ApplicationController
 	      			cityName: @lead[:city],
 	      			categoryName: @lead[:category]
 	      		}
-	      		@response = HTTParty.post('https://sapi.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
+	      		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
 				{ 
     			:body => @data.to_json,
     			:headers => { 'Content-Type' => 'application/json', 'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@'}
