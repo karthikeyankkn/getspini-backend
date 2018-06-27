@@ -27,7 +27,7 @@ class LeadsController <  ApplicationController
 					'X-SPIN-API-ACCESS-TOKEN' => 'HJKhlkasehl%jakbdajd81836sagsagHGSC*&t3@!UI'},	
     			:body => @data.to_json
   				});
-  				render json: @response, status: :created
+  				render json: @response.code, status: :created
   		# 		if @response.code == '200'
   		# 			render json: @response, status: :created
   		# 		else
