@@ -23,9 +23,9 @@ class LeadsController <  ApplicationController
     			:debug_output => $stdout
   				});
   				if @response.code == '200'
-  				render json: @response, status: :created
+  					render json: @response, status: :created
   				else
-  				render json: @response, status: :unprocessable_entity
+  					render json: @response.code, status: :unprocessable_entity
   				end
   				puts @response
   				# binding.pry
