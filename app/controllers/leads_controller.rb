@@ -1,5 +1,6 @@
 class LeadsController <  ApplicationController
 	include HTTParty
+	debug_output $stdout
 	skip_before_action :verify_authenticity_token
 	def create
 		@lead = Lead.new(lead_prams)
@@ -18,8 +19,10 @@ class LeadsController <  ApplicationController
 	      		@response = HTTParty.post('https://sapi.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
 				{ 
 				:headers => { 'Content-Type' => 'application/json', 'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@'},	
-    			:body => @data.to_json
+    			:body => @data.to_json,
+    			:debug_output => $stdout
   				});
+  				puts @response.code
   				puts @response
   				# binding.pry
   				render json: @lead, status: :created
