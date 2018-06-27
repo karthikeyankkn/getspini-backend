@@ -16,19 +16,18 @@ class LeadsController <  ApplicationController
 	      			# categoryName:@lead[:category],
 	      			budgetAmount: @lead[:budget_amount]
 	      		}
-	      		 Sms.new(data).send
-	      		 puts response
-	   #    		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
-				# { 
-				# :headers => { 
-				# 	'Access-Control-Allow-Origin' => '*',
-				# 	'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
-				# 	'Access-Control-Request-Method' => '*',
-				# 	'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-				# 	'Content-Type' => 'application/json', 
-				# 	'X-SPIN-API-ACCESS-TOKEN' => 'HJKhlkasehl%jakbdajd81836sagsagHGSC*&t3@!UI'},	
-    # 			:body => @data.to_json
-  		# 		});
+	      		# mobile = "8056756218"
+	      		# message = "hi am from another code"
+	      		 # Sms.new(mobile, message).send
+	      		 # puts response
+	      		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
+				{ 
+				:headers => { 
+					'Content-Type' => 'application/json', 
+					'X-SPIN-API-ACCESS-TOKEN' => 'HJKhlkasehl%jakbdajd81836sagsagHGSC*&t3@!UI'},	
+    			:body => @data.to_json
+  				});
+  				render json: @response, status: :created
   		# 		if @response.code == '200'
   		# 			render json: @response, status: :created
   		# 		else
