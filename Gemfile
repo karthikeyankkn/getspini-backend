@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'httparty', '~> 0.16.2'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -58,6 +58,7 @@ group :development do
 
   # Remove the following if your server does not use RVM
   gem 'capistrano-rvm'
+   # gem 'pry-byebug'
 end
 
 group :test do
