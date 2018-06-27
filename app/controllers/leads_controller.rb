@@ -20,7 +20,7 @@ class LeadsController <  ApplicationController
 				:headers => { 'Content-Type' => 'application/json', 'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@'},	
     			:body => @data.to_json
   				});
-  				puts @response.code
+  				puts @response
   				# binding.pry
   				render json: @lead, status: :created
 	      	else
