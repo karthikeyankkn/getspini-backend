@@ -16,16 +16,19 @@ class LeadsController <  ApplicationController
 	      			# categoryName:@lead[:category],
 	      			budgetAmount: @lead[:budget_amount]
 	      		}
-	      		@response = HTTParty.post('https://sapi.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
+	      		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
 				{ 
-				:headers => { 'Content-Type' => 'application/json', 'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@'},	
+				:headers => { 'Content-Type' => 'application/json', 'X-SPIN-API-ACCESS-TOKEN' => 'HJKhlkasehl%jakbdajd81836sagsagHGSC*&t3@!UI'},	
     			:body => @data.to_json,
     			:debug_output => $stdout
   				});
-  				puts @response.code
+  				if @response.code == '200'
+  				render json: @response, status: :created
+  				else
+  				render json: @response, status: :unprocessable_entity
+  				end
   				puts @response
   				# binding.pry
-  				render json: @lead, status: :created
 	      	else
 	      		# binding.pry
 	      		@data = {
