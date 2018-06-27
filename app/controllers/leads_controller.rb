@@ -7,7 +7,7 @@ class LeadsController <  ApplicationController
 	      if @lead.save
 	      	# binding.pry
 	      	if @lead[:source] == "direct"
-	      		@data = {
+	      		data = {
 	      			cityName: @lead[:city],
 	      			categoryName: @lead[:category],
 	      			prospectiveBuyersName: @lead[:direct_lead_name],
@@ -16,24 +16,25 @@ class LeadsController <  ApplicationController
 	      			# categoryName:@lead[:category],
 	      			budgetAmount: @lead[:budget_amount]
 	      		}
-	      		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
-				{ 
-				:headers => { 
-					'Access-Control-Allow-Origin' => '*',
-					'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
-					'Access-Control-Request-Method' => '*',
-					'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-					'Content-Type' => 'application/json', 
-					'X-SPIN-API-ACCESS-TOKEN' => 'HJKhlkasehl%jakbdajd81836sagsagHGSC*&t3@!UI'},	
-    			:body => @data.to_json,
-    			:debug_output => $stdout
-  				});
-  				if @response.code == '200'
-  					render json: @response, status: :created
-  				else
-  					render json: @response.code, status: :unprocessable_entity
-  				end
-  				puts @response
+	      		 Sms.new(data).send
+	      		 puts response
+	   #    		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
+				# { 
+				# :headers => { 
+				# 	'Access-Control-Allow-Origin' => '*',
+				# 	'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
+				# 	'Access-Control-Request-Method' => '*',
+				# 	'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+				# 	'Content-Type' => 'application/json', 
+				# 	'X-SPIN-API-ACCESS-TOKEN' => 'HJKhlkasehl%jakbdajd81836sagsagHGSC*&t3@!UI'},	
+    # 			:body => @data.to_json
+  		# 		});
+  		# 		if @response.code == '200'
+  		# 			render json: @response, status: :created
+  		# 		else
+  		# 			render json: @response.code, status: :unprocessable_entity
+  		# 		end
+  		# 		puts @response
   				# binding.pry
 	      	else
 	      		# binding.pry
