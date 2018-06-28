@@ -22,7 +22,7 @@ class Sms
   end
 
   def sms_headers
-    {:content_type => "application/json", "X-SPIN-API-ACCESS-TOKEN" => "KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@"}
+    {:content_type => "application/json", "X-SPIN-API-ACCESS-TOKEN" => "KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@", "ORIGIN" => "https://swapi.getspini.com"}
   end
 
   def sms_payload
