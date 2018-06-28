@@ -18,20 +18,22 @@ class Sms
   end
 
   def sms_end_point
-    "https://api.getspini.com:8443/SpinGrailsApp/notifications/utilities/generic/sms"
+    "https://sapi.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement"
   end
 
   def sms_headers
-    {:content_type => "application/json", 'X-SPIN-API-ACCESS-TOKEN' => "HJKhlkasehl%jakbdajd81836sagsagHGSC*&t3@!UI"}
+    {:content_type => "application/json", "X-SPIN-API-ACCESS-TOKEN" => "KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@"}
   end
 
   def sms_payload
     {
-    "phoneNumbers":[@mobile],
-    "messageToSend": @message,
-    "canSendToUnRegisteredNumbersAsWell": true,
-    "jmsQName": "TransactionalSMS"
-    }.to_json
+        "prospectiveBuyersName": "Name",
+        "phoneNumOfProspectiveBuyer": "9003239004",
+        "cityName": "Chennai",
+        "categoryName": "Loans",
+        "emailOfProspectiveBuyer": "email@email.com",
+        "budgetAmount": "10000"
+      }.to_json
     # REMOVE jmsQName from payload to avoid being BLACKLISTED by DND
   end
 end
