@@ -16,7 +16,7 @@ class LeadsController <  ApplicationController
 	      			# categoryName:@lead[:category],
 	      			budgetAmount: @lead[:budget_amount]
 	      		}
-	      		mobile = "8056756218"
+	      		mobile = "+918056756218"
 	      		message = "hi am from another code"
 	      		 Sms.new(mobile,message).send
 	      		 # puts response
