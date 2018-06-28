@@ -24,7 +24,7 @@ class LeadsController <  ApplicationController
 					'Content-Type' => 'application/json', 
 					'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@'},
 					'ORIGIN' => 'https://swapi.getspini.com'	
-    			:body => @data.to_json
+    			:body => data.to_json
   				});
   				# binding.pry
 	      	else
