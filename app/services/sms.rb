@@ -27,7 +27,7 @@ class Sms
 
   def sms_payload
     {
-        "prospectiveBuyersName": "Name",
+        "prospectiveBuyersName": "test-karthik",
         "phoneNumOfProspectiveBuyer": "9003239004",
         "cityName": "Chennai",
         "categoryName": "Loans",
