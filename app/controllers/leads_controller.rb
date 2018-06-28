@@ -16,9 +16,9 @@ class LeadsController <  ApplicationController
 	      			# categoryName:@lead[:category],
 	      			budgetAmount: @lead[:budget_amount]
 	      		}
-	      		# mobile = "8056756218"
-	      		# message = "hi am from another code"
-	      		 Sms.new(data).send
+	      		mobile = "8056756218"
+	      		message = "hi am from another code"
+	      		 Sms.new(mobile,message).send
 	      		 # puts response
 	   #    		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
 				# { 
