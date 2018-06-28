@@ -16,28 +16,20 @@ class LeadsController <  ApplicationController
 	      			# categoryName:@lead[:category],
 	      			budgetAmount: @lead[:budget_amount]
 	      		}
-	      		mobile = "+918056756218"
-	      		message = "hi am from another code"
-	      		 Sms.new(mobile,message).send
+	      		 # Sms.new(data).send
 	      		 # puts response
-	   #    		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
-				# { 
-				# :headers => { 
-				# 	'Content-Type' => 'application/json', 
-				# 	'X-SPIN-API-ACCESS-TOKEN' => 'HJKhlkasehl%jakbdajd81836sagsagHGSC*&t3@!UI'},	
-    # 			:body => @data.to_json
-  		# 		});
-  		# 		render json: @response.code, status: :created
-  		# 		if @response.code == '200'
-  		# 			render json: @response, status: :created
-  		# 		else
-  		# 			render json: @response.code, status: :unprocessable_entity
-  		# 		end
-  		# 		puts @response
+	      		@response = HTTParty.post('https://sapi.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
+				{ 
+				:headers => { 
+					'Content-Type' => 'application/json', 
+					'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@'},
+					'ORIGIN' => 'https://swapi.getspini.com'	
+    			:body => @data.to_json
+  				});
   				# binding.pry
 	      	else
 	      		# binding.pry
-	      		@data = {
+	      		data = {
 	      			referrersName:@lead[:direct_lead_name],
 	      			phoneNumOfReferrer:@lead[:direct_lead_number],
 	      			prospectiveBuyersName:@lead[:referal_lead_name],
