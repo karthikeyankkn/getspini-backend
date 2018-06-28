@@ -41,9 +41,11 @@ class LeadsController <  ApplicationController
 	      		@response = HTTParty.post('https://sapi.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
 				{ 
     			:body => data.to_json,
-    			:headers => { 'Content-Type' => 'application/json', 'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@'}
+    			:headers => { 'Content-Type' => 'application/json', 'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@',
+    			'ORIGIN' => 'https://swapi.getspini.com' }
   				});
   				# binding.pry
+  				# puts @response.code
   				render json: @lead, status: :created
 	      	end
 	      else
