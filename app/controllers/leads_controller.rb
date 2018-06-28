@@ -24,7 +24,7 @@ class LeadsController <  ApplicationController
 					'Content-Type' => 'application/json', 
 					'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@',
 					'ORIGIN' => 'https://swapi.getspini.com'
-				}	
+				},	
     			:body => data.to_json
   				});
   				# binding.pry
@@ -40,7 +40,7 @@ class LeadsController <  ApplicationController
 	      		}
 	      		@response = HTTParty.post('https://sapi.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
 				{ 
-    			:body => @data.to_json,
+    			:body => data.to_json,
     			:headers => { 'Content-Type' => 'application/json', 'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@'}
   				});
   				# binding.pry
