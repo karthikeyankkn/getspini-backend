@@ -46,7 +46,7 @@ class LeadsController <  ApplicationController
   				});
   				# binding.pry
   				# puts @response.code
-  				render json: @lead, status: :created
+  				# render json: @lead, status: :created
 	      	end
 	      else
 	      	render json: @lead.errors, status: :unprocessable_entity
