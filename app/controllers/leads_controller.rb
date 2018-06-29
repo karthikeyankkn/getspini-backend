@@ -18,12 +18,12 @@ class LeadsController <  ApplicationController
 	      		}
 	      		 # Sms.new(data).send
 	      		 # puts response
-	      		@response = HTTParty.post('https://sapi.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
+	      		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
 				{ 
 				:headers => { 
 					'Content-Type' => 'application/json', 
-					'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@',
-					'ORIGIN' => 'https://swapi.getspini.com'
+					'X-SPIN-API-ACCESS-TOKEN' => 'HJKhlkasehl%jakbdajd81836sagsagHGSC*&t3@!UI',
+					'ORIGIN' => 'https://wapi.getspini.com'
 				},	
     			:body => data.to_json
   				});
@@ -38,11 +38,11 @@ class LeadsController <  ApplicationController
 	      			cityName: @lead[:city],
 	      			categoryName: @lead[:category]
 	      		}
-	      		@response = HTTParty.post('https://sapi.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
+	      		@response = HTTParty.post('https://api.getspini.com:8443/SpinGrailsApp/web/site/leads/website/create/for/self/requirement',
 				{ 
     			:body => data.to_json,
-    			:headers => { 'Content-Type' => 'application/json', 'X-SPIN-API-ACCESS-TOKEN' => 'KOIA8sl#4kasdd98!29jskdlmcxr48b39882#@',
-    			'ORIGIN' => 'https://swapi.getspini.com' }
+    			:headers => { 'Content-Type' => 'application/json', 'X-SPIN-API-ACCESS-TOKEN' => 'HJKhlkasehl%jakbdajd81836sagsagHGSC*&t3@!UI',
+    			'ORIGIN' => 'https://wapi.getspini.com' }
   				});
   				# binding.pry
   				# puts @response.code
